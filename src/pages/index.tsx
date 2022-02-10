@@ -1,72 +1,75 @@
-import * as React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
-import Seo from '@/components/Seo';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <Layout>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
+    <div className='heropattern-bubbles-neutral-100 h-screen'>
+      <Head>
+        <title>I Love To Fish</title>
+        <link rel='icon' href='/favicon.png' />
+      </Head>
 
-      <main>
-        <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
+      <div className='flex flex-col'>
+        <div className='pl-1'>
+          <Header />
+        </div>
+        <main className='pt-16'>
+          <div className='mx-auto grid max-w-6xl grid-cols-6 md:gap-4'>
+            <h3 className='col-span-4 col-start-2 flex h-20 justify-center text-5xl md:h-48'>
+              <Link href='/spring'>
+                <a className='my-auto text-lime-400 hover:text-blue-600'>
+                  <FontAwesomeIcon
+                    icon={['fal', 'flower-daffodil']}
+                    className='h-14'
+                  />
+                </a>
+              </Link>
+            </h3>
 
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink>
+            <h3 className='col-start-1 col-end-3 flex h-20 justify-center text-5xl md:h-48'>
+              <Link href='/summer'>
+                <a className='my-auto text-rose-400 hover:text-indigo-500'>
+                  <FontAwesomeIcon
+                    icon={['fal', 'cloud-sun-rain']}
+                    className='h-14'
+                  />
+                </a>
+              </Link>
+            </h3>
 
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
+            <h3 className='col-span-3 col-end-8 flex h-20 justify-center text-5xl md:h-48'>
+              <Link href='/fall'>
+                <a className='my-auto text-fuchsia-400 hover:text-indigo-500'>
+                  <FontAwesomeIcon
+                    icon={['fal', 'leaf-maple']}
+                    className='h-14'
+                  />
+                </a>
+              </Link>
+            </h3>
 
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
+            <h3 className='col-span-7 col-start-1 flex h-20 justify-center text-5xl md:h-48'>
+              <Link href='/winter'>
+                <a className='my-auto text-teal-400 hover:text-indigo-500'>
+                  <FontAwesomeIcon
+                    icon={['fal', 'snowflakes']}
+                    className='h-14'
+                  />
+                </a>
+              </Link>
+            </h3>
           </div>
-        </section>
-      </main>
-    </Layout>
+        </main>
+        <p></p>
+      </div>
+
+      <div className='fixed bottom-0 w-full'>
+        <Footer />
+      </div>
+    </div>
   );
 }
