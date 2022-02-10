@@ -33,10 +33,7 @@ export default function Home() {
             <h3 className='col-start-1 col-end-3 flex h-20 justify-center text-5xl md:h-48'>
               <Link href='/summer'>
                 <a className='my-auto text-rose-400 hover:text-indigo-500'>
-                  <FontAwesomeIcon
-                    icon={['fal', 'cloud-sun-rain']}
-                    className='h-14'
-                  />
+                  <FontAwesomeIcon icon='fa-light fa-cloud-sun-rain' />
                 </a>
               </Link>
             </h3>
